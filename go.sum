@@ -1,0 +1,4 @@
+github.com/gorilla/mux v1.7.3 h1:gnP5JzjVOuiZD07fKKToCAOjS0yOpj/qPETTXCCS6hw=
+github.com/gorilla/mux v1.7.3/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=
+github.com/jboursiquot/mystringutils v0.0.0-20180621144902-fe38ea4f0947 h1:C9jaffVSeyrL0KnzQNDeCbW5bQ+UEL/MS3wKo0QiT+Q=
+github.com/jboursiquot/mystringutils v0.0.0-20180621144902-fe38ea4f0947/go.mod h1:W10ZqcCtEWLKrtQKvo5MVu6a7dkMosVTIIDOAhJjvwI=
