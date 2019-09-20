@@ -31,7 +31,7 @@ func main() {
 	}
 }
 
-func charCount(line string) map[rune]int {
+func charCount(line string) map[rune]int { // notice anything different here from previous exercises?
 	m := make(map[rune]int, 0)
 	for _, c := range line {
 		m[c] = m[c] + 1

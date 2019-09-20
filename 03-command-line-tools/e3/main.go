@@ -8,24 +8,6 @@ import (
 	"strings"
 )
 
-type proverb struct {
-	line  string
-	chars map[rune]int
-}
-
-func (p *proverb) charCount() map[rune]int {
-	if p.chars != nil {
-		return p.chars
-	}
-
-	m := make(map[rune]int, 0)
-	for _, c := range p.line {
-		m[c] = m[c] + 1
-	}
-	p.chars = m
-	return p.chars
-}
-
 func main() {
 	path := pathFromFlag()
 	if path == "" {
@@ -45,7 +27,7 @@ func main() {
 
 	for _, p := range proverbs {
 		fmt.Printf("%s\n", p.line)
-		for k, v := range p.charCount() {
+		for k, v := range p.chars {
 			fmt.Printf("'%c'=%d, ", k, v)
 		}
 		fmt.Print("\n\n")
@@ -72,8 +54,7 @@ func loadProverbs(path string) ([]*proverb, error) {
 
 	lines := strings.Split(string(bs), "\n")
 	for _, line := range lines {
-		p := &proverb{line: line}
-		proverbs = append(proverbs, p)
+		proverbs = append(proverbs, newProverb(line))
 	}
 
 	return proverbs, nil
