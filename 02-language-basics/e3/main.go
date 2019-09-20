@@ -27,7 +27,19 @@ Don't panic.`
 
 func main() {
 	lines := strings.Split(proverbs, "\n")
-	for index, line := range lines {
-		fmt.Printf("%d. %s\n", index+1, line)
+	for _, l := range lines {
+		fmt.Printf("%s\n", l)
+		for k, v := range charCount(l) {
+			fmt.Printf("'%s'=%d, ", k, v)
+		}
+		fmt.Print("\n\n")
 	}
+}
+
+func charCount(line string) map[string]int {
+	m := make(map[string]int, 0)
+	for _, char := range line {
+		m[string(char)] = m[string(char)] + 1
+	}
+	return m
 }
